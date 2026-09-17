@@ -211,7 +211,7 @@ func save() -> void:
 	save_dialog.show()
 	save_dialog.file_selected.connect(func(path: String):
 		var crosshair_file = FileAccess.open(path, FileAccess.WRITE)
-		var json: String = CrosshairSettings.to_json(previewed_setting)
+		var json: String = previewed_setting.to_json()
 		crosshair_file.store_line(json)
 		file_saved.emit(previewed_setting),
 		ConnectFlags.CONNECT_ONE_SHOT)
