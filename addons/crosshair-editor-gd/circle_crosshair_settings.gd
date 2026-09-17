@@ -9,7 +9,7 @@ static var name: String = "CircleCrosshairSettings"
 @export var dot_radius: float = 0.0
 @export var dot_color: Color = Color.WHITE
 
-func render(parent: Crosshair):
+func render(parent: Crosshair) -> void:
 	var resolved_thickness: float = thickness
 	if fill:
 		resolved_thickness = -1.0

@@ -53,7 +53,7 @@ var types_to_tabs: Dictionary[String, int] = {
 	TextureCrosshairSettings.name: 2
 }
 
-func _ready():
+func _ready() -> void:
 	if !DirAccess.dir_exists_absolute(folder_location):
 		DirAccess.make_dir_recursive_absolute(folder_location)
 
@@ -105,7 +105,7 @@ func _ready():
 	# generate a preview
 	_on_switch_tab(tab_container.current_tab)
 	
-func _on_switch_tab(id: int):
+func _on_switch_tab(id: int) -> void:
 	var tab_name: String = tab_container.get_tab_title(id)
 	match tab_name:
 		"Cross":
@@ -115,7 +115,7 @@ func _on_switch_tab(id: int):
 		"Texture":
 			preview_texture()
 
-func preview(settings: CrosshairSettings):
+func preview(settings: CrosshairSettings) -> void:
 	for c in preview_container.get_children():
 		preview_container.remove_child(c)
 		c.queue_free()
@@ -131,7 +131,7 @@ func preview(settings: CrosshairSettings):
 	if target_tab != tab_container.current_tab:
 		tab_container.current_tab = target_tab
 
-func update_settings_for_preview(preview: CrosshairSettings):
+func update_settings_for_preview(preview: CrosshairSettings) -> void:
 	# Unfortunate need due to race conditions on these updates setting values
 	var children: Array[Node] = find_children("*")
 	for c in children:
@@ -148,7 +148,7 @@ func update_settings_for_preview(preview: CrosshairSettings):
 		c.set_block_signals(false)
 
 #region preview cross
-func preview_cross():
+func preview_cross() -> void:
 	var cross_settings: TCrosshairSettings = TCrosshairSettings.new()
 	cross_settings.color = cross_color_picker_button.color
 	cross_settings.gap = cross_gap_value.value
@@ -158,7 +158,7 @@ func preview_cross():
 	cross_settings.dot_color = cross_dot_color_picker_button.color
 	preview(cross_settings)
 
-func update_cross_values(cross_settings: TCrosshairSettings):
+func update_cross_values(cross_settings: TCrosshairSettings) -> void:
 	cross_color_picker_button.color = cross_settings.color
 	cross_gap_value.value = cross_settings.gap
 	cross_length_value.value = cross_settings.length
@@ -168,7 +168,7 @@ func update_cross_values(cross_settings: TCrosshairSettings):
 #endregion
 
 #region circle previews
-func preview_circle():
+func preview_circle() -> void:
 	var circle_settings: CircleCrosshairSettings = CircleCrosshairSettings.new()
 	circle_settings.color = circle_color.color
 	circle_settings.fill = fill.button_pressed
@@ -178,7 +178,7 @@ func preview_circle():
 	circle_settings.dot_color = circle_dot_color_picker_button.color
 	preview(circle_settings)
 
-func update_circle_settings(circle_settings: CircleCrosshairSettings):
+func update_circle_settings(circle_settings: CircleCrosshairSettings) -> void:
 	circle_color.color = circle_settings.color
 	fill.button_pressed = circle_settings.fill
 	radius_value.value = circle_settings.radius
@@ -188,11 +188,11 @@ func update_circle_settings(circle_settings: CircleCrosshairSettings):
 #endregion
 
 #region texture previews
-func set_file(path: String):
+func set_file(path: String) -> void:
 	selected_file_label.text = path
 	preview_texture()
 
-func preview_texture():
+func preview_texture() -> void:
 	if !FileAccess.file_exists(selected_file_label.text):
 		preview(null)
 		return
@@ -207,7 +207,7 @@ func update_texture_settings(texture_settings: TextureCrosshairSettings):
 	texture_scale.value = texture_settings.texture_scaling
 #endregion
 
-func save():
+func save() -> void:
 	save_dialog.show()
 	save_dialog.file_selected.connect(func(path: String):
 		var crosshair_file = FileAccess.open(path, FileAccess.WRITE)
@@ -216,7 +216,7 @@ func save():
 		file_saved.emit(previewed_setting),
 		ConnectFlags.CONNECT_ONE_SHOT)
 
-func open():
+func open() -> void:
 	open_dialog.show()
 	open_dialog.file_selected.connect(func(path: String):
 		var crosshair_setting: CrosshairSettings = CrosshairSettings.from_json(FileAccess.get_file_as_string(path))

@@ -2,7 +2,7 @@
 class_name CrosshairSettings extends Resource
 
 ## Called from parent to draw this crosshair on screen
-@abstract func render(parent: Crosshair)
+@abstract func render(parent: Crosshair) -> void
 
 @abstract func get_type_string() -> String
 
