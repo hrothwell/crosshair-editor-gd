@@ -2,14 +2,14 @@
 class_name CrosshairSettings extends Resource
 
 ## Called from parent to draw this crosshair on screen
-@abstract func render(parent: Crosshair)
+@abstract func render(parent: Crosshair) -> void
 
 @abstract func get_type_string() -> String
 
 @abstract func to_dict() -> Dictionary
 
-static func to_json(setting: CrosshairSettings) -> String:
-	return JSON.stringify(JSON.from_native(setting.to_dict()))
+func to_json() -> String:
+	return JSON.stringify(JSON.from_native(to_dict()))
 
 static func from_json(json: String) -> CrosshairSettings:
 	var result: CrosshairSettings = null

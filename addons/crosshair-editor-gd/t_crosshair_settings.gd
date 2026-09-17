@@ -9,7 +9,7 @@ static var name: String = "TCrosshairSettings"
 @export var color: Color = Color.WHITE
 @export var dot_color: Color = Color.WHITE
 
-func render(parent: Crosshair):
+func render(parent: Crosshair) -> void:
 	var origin = Vector2.ZERO
 	var top_start = origin.y - gap
 	var bottom_start = origin.y + gap

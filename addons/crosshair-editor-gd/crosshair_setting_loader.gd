@@ -13,12 +13,12 @@ class_name CrosshairSettingLoaderComponent extends Node
 @onready var parent: Crosshair = get_parent()
 var config_file: ConfigFile
 
-func _ready():
+func _ready() -> void:
 	config_file = ConfigFile.new()
 	load_setting()
 	# Connect any signals to settings changing to update user crosshair
 
-func load_setting():
+func load_setting() -> void:
 	print("loading crosshair config")
 	config_file.load(settings_file)
 	var settings: CrosshairSettings = CrosshairSettings.from_json(config_file.get_value(section, key, ""))

@@ -7,7 +7,7 @@ static var name: String = "TextureCrosshairSettings"
 ## scale the texture up or down
 @export_range(0.01, 2.0, 0.01) var texture_scaling: float = 1.0
 
-func render(parent: Crosshair):
+func render(parent: Crosshair) -> void:
 	var texture_2d: Texture2D = load(texture_file)
 	var rect: CrosshairRect = CrosshairRect.new()
 	rect.texture = texture_2d
