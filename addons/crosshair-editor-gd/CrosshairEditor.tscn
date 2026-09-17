@@ -1,0 +1,273 @@
+[gd_scene format=3 uid="uid://b25nl0ffuvaqc"]
+
+[ext_resource type="Script" uid="uid://1uv5t1libss3" path="res://addons/crosshair-editor-gd/crosshair_editor.gd" id="1_7t3l2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bih6s"]
+content_margin_top = 20.0
+
+[node name="CrosshairEditor" type="PanelContainer" unique_id=1101539490]
+offset_right = 523.0
+offset_bottom = 491.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_7t3l2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=696323281]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="HBoxContainer" unique_id=1574494191]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+use_hidden_tabs_for_min_size = true
+
+[node name="Create" type="MarginContainer" parent="HBoxContainer/TabContainer" unique_id=1360488578]
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/TabContainer/Create" unique_id=39176238]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="HBoxContainer/TabContainer/Create/VBoxContainer" unique_id=1309367797]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bih6s")
+tab_alignment = 1
+current_tab = 0
+clip_tabs = false
+use_hidden_tabs_for_min_size = true
+
+[node name="Cross" type="VBoxContainer" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer" unique_id=1527215606]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Cross" unique_id=1497062837]
+layout_mode = 2
+columns = 2
+
+[node name="CrossLengthLabel" type="Label" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Cross/GridContainer" unique_id=611955852]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Length:"
+
+[node name="CrossLengthValue" type="HSlider" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Cross/GridContainer" unique_id=874745585]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CrossWidthLabel" type="Label" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Cross/GridContainer" unique_id=821152887]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Width:"
+
+[node name="CrossWidthValue" type="HSlider" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Cross/GridContainer" unique_id=185619626]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CrossGapLabel" type="Label" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Cross/GridContainer" unique_id=543129139]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gap:"
+
+[node name="CrossGapValue" type="HSlider" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Cross/GridContainer" unique_id=1949214108]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CrossColorLabel" type="Label" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Cross/GridContainer" unique_id=1117574594]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Color:"
+
+[node name="CrossColorPickerButton" type="ColorPickerButton" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Cross/GridContainer" unique_id=1305209096]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 1)
+
+[node name="CrossDotRadiusLabel" type="Label" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Cross/GridContainer" unique_id=567471293]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dot radius:"
+
+[node name="CrossDotRadiusValue" type="HSlider" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Cross/GridContainer" unique_id=1727558269]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CrossDotColorLabel" type="Label" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Cross/GridContainer" unique_id=13573398]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dot color:"
+
+[node name="CrossDotColorPickerButton" type="ColorPickerButton" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Cross/GridContainer" unique_id=702556014]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 1)
+
+[node name="Circle" type="VBoxContainer" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer" unique_id=739122596]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Circle" unique_id=1029174799]
+layout_mode = 2
+columns = 2
+
+[node name="RadiusLabel" type="Label" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Circle/GridContainer" unique_id=224708636]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Radius:"
+
+[node name="RadiusValue" type="HSlider" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Circle/GridContainer" unique_id=1050702204]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CircleWidthLabel" type="Label" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Circle/GridContainer" unique_id=1575906913]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Width:"
+
+[node name="CircleWidthValue" type="HSlider" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Circle/GridContainer" unique_id=447030504]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorLabel" type="Label" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Circle/GridContainer" unique_id=1034503045]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Color:"
+
+[node name="CircleColorPickerButton" type="ColorPickerButton" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Circle/GridContainer" unique_id=369969797]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 1)
+
+[node name="CricleDotRadiusLabel" type="Label" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Circle/GridContainer" unique_id=818523171]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dot radius:"
+
+[node name="CircleDotRadiusValue" type="HSlider" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Circle/GridContainer" unique_id=1167203731]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CircleDotColorLabel" type="Label" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Circle/GridContainer" unique_id=1443127772]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dot color:"
+
+[node name="CircleDotColorPickerButton" type="ColorPickerButton" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Circle/GridContainer" unique_id=2080834761]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 1, 1, 1)
+
+[node name="FillButton" type="CheckButton" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Circle" unique_id=803135661]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Fill"
+
+[node name="Texture" type="VBoxContainer" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer" unique_id=2110693713]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="FileDialog" type="FileDialog" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Texture" unique_id=150421735]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "Open a File"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.png")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Texture" unique_id=1693749516]
+layout_mode = 2
+
+[node name="TextureLabel" type="Label" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Texture/HBoxContainer" unique_id=1999529552]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Texture:"
+
+[node name="SelectTextureButton" type="Button" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Texture/HBoxContainer" unique_id=309204741]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Select"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Texture" unique_id=272752085]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Texture/ScrollContainer" unique_id=1072752491]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SelectedFileLabel" type="Label" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Texture/ScrollContainer/HBoxContainer" unique_id=517141381]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "?"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Texture" unique_id=1326844506]
+layout_mode = 2
+
+[node name="ScaleLabel" type="Label" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Texture/HBoxContainer2" unique_id=451122920]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Scale:"
+
+[node name="ScaleValue" type="HSlider" parent="HBoxContainer/TabContainer/Create/VBoxContainer/TabContainer/Texture/HBoxContainer2" unique_id=1734286400]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="Export" type="Button" parent="HBoxContainer/TabContainer/Create/VBoxContainer" unique_id=609219388]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Export"
+
+[node name="Load" type="MarginContainer" parent="HBoxContainer/TabContainer" unique_id=2013301962]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/TabContainer/Load" unique_id=1767607487]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/TabContainer/Load/VBoxContainer" unique_id=190363117]
+layout_mode = 2
+
+[node name="ImportFile" type="Button" parent="HBoxContainer/TabContainer/Load/VBoxContainer" unique_id=1765323064]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Import file"
+
+[node name="CrosshairPreviewContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1365423904]
+unique_name_in_owner = true
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SaveDialog" type="FileDialog" parent="." unique_id=97813630]
+unique_name_in_owner = true
+access = 1
+filters = PackedStringArray("*.json")
+
+[node name="OpenDialog" type="FileDialog" parent="." unique_id=281572672]
+unique_name_in_owner = true
+title = "Open a File"
+file_mode = 0
+access = 1
+filters = PackedStringArray("*.json")

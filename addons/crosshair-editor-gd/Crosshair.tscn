@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b60nbfylwvm3s"]
+
+[ext_resource type="Script" uid="uid://ctvisgl4ykq4l" path="res://scenes/components/crosshair/crosshair.gd" id="1_742j5"]
+
+[node name="Crosshair" type="Control" unique_id=1506413776]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_742j5")
