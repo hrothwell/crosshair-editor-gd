@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://uildqglv3doy"]
+
+[ext_resource type="Script" uid="uid://ctvisgl4ykq4l" path="res://addons/crosshair-editor-gd/crosshair.gd" id="1_2dvyh"]
+[ext_resource type="Script" uid="uid://co2n3fnq4mdjg" path="res://test/removal_test.gd" id="1_2uqsi"]
+[ext_resource type="Script" uid="uid://b5gr3holifcr4" path="res://addons/crosshair-editor-gd/circle_crosshair_settings.gd" id="2_2uqsi"]
+
+[sub_resource type="Resource" id="Resource_df1n5"]
+script = ExtResource("2_2uqsi")
+metadata/_custom_type_script = "uid://b5gr3holifcr4"
+
+[node name="RemovalTest" type="Control" unique_id=783842165]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2uqsi")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=955992172]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1642075258]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Crosshair" type="Control" parent="HBoxContainer/CenterContainer" unique_id=958653435]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("1_2dvyh")
+settings = SubResource("Resource_df1n5")
+metadata/_custom_type_script = "uid://ctvisgl4ykq4l"
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=190397594]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "remove"
