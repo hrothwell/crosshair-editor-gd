@@ -8,13 +8,9 @@ class_name Crosshair extends Control
 				remove_child(c)
 				c.queue_free()
 		settings = new_settings
+		if settings:
+			draw.connect(settings.render.bind(self))
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		visibility_changed.connect(queue_redraw)
-
-func _draw() -> void:
-	if settings == null:
-		printerr("Crosshair settings not present")
-		return
-	settings.render(self)

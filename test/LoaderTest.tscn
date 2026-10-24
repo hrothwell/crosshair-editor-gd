@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c4u4txuxvqvi3"]
+
+[ext_resource type="Script" uid="uid://ctvisgl4ykq4l" path="res://addons/crosshair-editor-gd/crosshair.gd" id="1_vi5eb"]
+[ext_resource type="Script" uid="uid://4ubps5h1flf4" path="res://addons/crosshair-editor-gd/crosshair_setting_loader.gd" id="2_lonpi"]
+[ext_resource type="Script" uid="uid://bolm2m0km7dxh" path="res://addons/crosshair-editor-gd/t_crosshair_settings.gd" id="3_lonpi"]
+
+[sub_resource type="Resource" id="Resource_vi5eb"]
+script = ExtResource("3_lonpi")
+length = 5.0
+width = 2.0
+dot_radius = 0.0
+metadata/_custom_type_script = "uid://bolm2m0km7dxh"
+
+[node name="LoaderTest" type="Control" unique_id=1527744658]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=920299258]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Crosshair" type="Control" parent="CenterContainer" unique_id=1172425989]
+layout_mode = 2
+script = ExtResource("1_vi5eb")
+metadata/_custom_type_script = "uid://ctvisgl4ykq4l"
+
+[node name="CrosshairSettingLoaderComponent" type="Node" parent="CenterContainer/Crosshair" unique_id=872243113]
+script = ExtResource("2_lonpi")
+default_crosshair_settings = SubResource("Resource_vi5eb")
+metadata/_custom_type_script = "uid://4ubps5h1flf4"
