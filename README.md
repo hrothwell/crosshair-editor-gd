@@ -30,13 +30,13 @@ var config_file := ConfigFile.new()
 var section: String = "Controls"
 
 func _ready() -> void:
-    config_file.load(file_path)
+	config_file.load(file_path)
 
 func save_crosshair() -> void:
-    var json: String = crosshair_editor.previewed_setting.to_json()
-    config_file.set_value(section, "crosshair", json)
+	var json: String = crosshair_editor.previewed_setting.to_json()
+	config_file.set_value(section, "crosshair", json)
 
 func load_crosshair() -> void:
-    var json: String = config_file.get_value(section, "crosshair", "")
-    var crosshair_setting: CrosshairSetting = CrosshairSetting.from_json(json)
+	var json: String = config_file.get_value(section, "crosshair", "")
+	var crosshair_setting: CrosshairSetting = CrosshairSetting.from_json(json)
 ```
